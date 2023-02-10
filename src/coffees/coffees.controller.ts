@@ -11,7 +11,7 @@ export class CoffeesController {
         return "Hot dark chocolate, cold dark chocolate, hot white chocolate"
     }
     @Get(":id")
-    getCoffeeById(@Param() params){
-        return `You are searcing for a coffee with id #${params.id}`
+    getCoffeeById(@Param('id') id: string){
+        return `You are searcing for a coffee with id #${id}`
     }
 }
