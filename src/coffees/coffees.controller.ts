@@ -18,7 +18,7 @@ export class CoffeesController {
     }
 
     @Post()
-    create(@Body() body){
-        return body
+    create(@Body("price") price: string){
+        return price
     }
 }
