@@ -3,9 +3,8 @@ import { Body, Controller, Get, HttpCode, HttpStatus, Param, Post, Res } from '@
 @Controller('coffees')
 export class CoffeesController {
     @Get()
-    findAll(@Res() response){
-        response.status(254).send("List of all the coffees avaiable in our shop")
-        // return "List of all the coffees avaiable in our shop"
+    findAll(){
+        return "List of all the coffees avaiable in our shop"
     }
 
     @Get("chocolate")
@@ -19,7 +18,6 @@ export class CoffeesController {
     }
 
     @Post()
-    @HttpCode(HttpStatus.GONE)
     create(@Body("price") body){
         return body
     }
