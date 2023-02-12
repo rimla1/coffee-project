@@ -42,5 +42,6 @@ export class CoffeesService {
         if (coffeeIndex >= 0) {
           this.coffees.splice(coffeeIndex, 1);
         }
+        return "Item deleted!"
     }
 }
