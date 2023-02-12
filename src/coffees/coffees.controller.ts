@@ -26,8 +26,8 @@ export class CoffeesController {
 
     @Post()
     @HttpCode(HttpStatus.GONE)
-    create(@Body("price") price){
-        return price
+    create(@Body("coffee") coffee){
+        return this.coffeesService.create(coffee)
     }
 
     @Patch(":id")

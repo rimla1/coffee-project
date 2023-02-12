@@ -21,7 +21,11 @@ export class CoffeesService {
       }
 
     findOne(id){
-        console.log(id)
         return this.coffees.find(coffee => coffee.id === +id)
+    }
+
+    create(coffee: any){
+        this.coffees.push(coffee)
+        return "Item added!"
     }
 }
