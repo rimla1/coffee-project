@@ -39,6 +39,6 @@ export class CoffeesController {
     @Delete(":id")
     @HttpCode(HttpStatus.OK)
     remove(@Param('id') id: string){
-        return `Coffee with #${id} id has been removed!`
+        return this.coffeesService.remove(id)
     }
 }

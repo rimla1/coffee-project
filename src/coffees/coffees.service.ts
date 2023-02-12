@@ -36,4 +36,11 @@ export class CoffeesService {
         }
         return "User does not exist!"
     }
+
+    remove(id){
+        const coffeeIndex = this.coffees.findIndex(item => item.id === +id);
+        if (coffeeIndex >= 0) {
+          this.coffees.splice(coffeeIndex, 1);
+        }
+    }
 }
