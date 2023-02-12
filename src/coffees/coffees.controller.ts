@@ -33,7 +33,7 @@ export class CoffeesController {
     @Patch(":id")
     @HttpCode(HttpStatus.OK)
     update(@Param('id') id: string, @Body() body){
-        return `Coffee with #${id} has updated with new values: ${body.name}`
+        return this.coffeesService.update(id, body)
     }
 
     @Delete(":id")

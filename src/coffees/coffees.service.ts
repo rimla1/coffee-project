@@ -24,8 +24,16 @@ export class CoffeesService {
         return this.coffees.find(coffee => coffee.id === +id)
     }
 
-    create(coffee: any){
-        this.coffees.push(coffee)
+    create(createCoffeeData: any){
+        this.coffees.push(createCoffeeData)
         return "Item added!"
+    }
+
+    update(id, updateCoffeeData){
+        const existingCoffee = this.findOne(id)
+        if(existingCoffee){
+            return `You can update user because user exist!,`
+        }
+        return "User does not exist!"
     }
 }
