@@ -1,4 +1,4 @@
-import { Body, Controller, Get, HttpCode, HttpStatus, Param, Post, Res } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, HttpStatus, Param, Post, Res, Patch } from '@nestjs/common';
 
 @Controller('coffees')
 export class CoffeesController {
@@ -8,8 +8,8 @@ export class CoffeesController {
     }
 
     @Get("chocolate")
-    findChocolate(){
-        return "Hot dark chocolate, cold dark chocolate, hot white chocolate"
+    findChocolate(@Res() response){
+        response.status(210).send("All the chocolate drinks")
     }
 
     @Get(":id")
@@ -18,7 +18,13 @@ export class CoffeesController {
     }
 
     @Post()
-    create(@Body("price") body){
-        return body
+    @HttpCode(HttpStatus.GONE)
+    create(@Body("price") price){
+        return price
+    }
+
+    @Patch(":id")
+    update(@Param('id') id: string, @Body() body){
+        return `User with #${id} has updated with new values: ${body.name}`
     }
 }
