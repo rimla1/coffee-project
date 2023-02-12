@@ -1,4 +1,4 @@
-import { Body, Controller, Get, HttpCode, HttpStatus, Param, Post, Res, Patch } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, HttpStatus, Param, Post, Res, Patch, Delete } from '@nestjs/common';
 
 @Controller('coffees')
 export class CoffeesController {
@@ -26,6 +26,12 @@ export class CoffeesController {
     @Patch(":id")
     @HttpCode(HttpStatus.OK)
     update(@Param('id') id: string, @Body() body){
-        return `User with #${id} has updated with new values: ${body.name}`
+        return `Coffee with #${id} has updated with new values: ${body.name}`
+    }
+
+    @Delete(":id")
+    @HttpCode(HttpStatus.OK)
+    remove(@Param('id') id: string){
+        return `Coffee with #${id} id has been removed!`
     }
 }
