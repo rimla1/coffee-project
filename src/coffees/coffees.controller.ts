@@ -20,8 +20,8 @@ export class CoffeesController {
     }
 
     @Get(":id")
-    getCoffeeById(@Param('id') id: string){
-        return `You are searcing for a coffee with id #${id}`
+    findOne(@Param('id') id: string){
+        return this.coffeesService.findOne(id)
     }
 
     @Post()

@@ -19,4 +19,9 @@ export class CoffeesService {
     findAll() {
         return this.coffees;
       }
+
+    findOne(id){
+        console.log(id)
+        return this.coffees.find(coffee => coffee.id === +id)
+    }
 }
