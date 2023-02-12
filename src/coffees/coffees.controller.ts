@@ -10,8 +10,8 @@ export class CoffeesController {
 
     @Get()
     findAll(@Query() paginationQuery){
-        const {limit, offset} = paginationQuery
-        return `List of all the coffees avaiable in our shop, limit: ${limit}, offset: ${offset}`
+        // const {limit, offset} = paginationQuery
+        return this.coffeesService.findAll()
     }
 
     @Get("chocolate")

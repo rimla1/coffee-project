@@ -16,5 +16,7 @@ export class CoffeesService {
         flavours: ["Gorka", "Slatka"]
     }]
 
-    
+    findAll() {
+        return this.coffees;
+      }
 }
