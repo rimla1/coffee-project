@@ -24,6 +24,7 @@ export class CoffeesController {
     }
 
     @Patch(":id")
+    @HttpCode(HttpStatus.OK)
     update(@Param('id') id: string, @Body() body){
         return `User with #${id} has updated with new values: ${body.name}`
     }
