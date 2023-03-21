@@ -31,7 +31,7 @@ export class CoffeesService {
 
     create(createCoffeeData: any){
         this.coffees.push(createCoffeeData)
-        return "Item added!"
+        return createCoffeeData
     }
 
     update(id, updateCoffeeData){
