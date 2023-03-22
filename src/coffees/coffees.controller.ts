@@ -16,24 +16,9 @@ export class CoffeesController {
         return this.coffeesService.findAll()
     }
 
-    @Get("chocolate")
-    findChocolate(@Res() response){
-        response.status(210).send("All the chocolate drinks")
-    }
-
-    // @Get(":name")
-    // printNameFromParams(@Param("name") name: string){
-    //     return `Hello, my name is ${name}`
-    // }
-
-    // @Post("player")
-    // playerData(@Body("rank") rank){
-    //     console.log(rank)
-    //     return rank
-    // }
 
     @Get(":id")
-    findOne(@Param('id') id: string){
+    findOne(@Param('id') id: number){
         return this.coffeesService.findOne(id)
     }
 
