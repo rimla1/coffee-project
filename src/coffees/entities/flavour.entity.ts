@@ -12,7 +12,7 @@ export class Flavour {
     name: string
 
     @ManyToMany(type => Coffee, (coffee) => {
-        coffee.flavours
+        coffee.flavors
     })
     coffees: Coffee[]
 }
