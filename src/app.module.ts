@@ -3,10 +3,12 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CoffeesModule } from './coffees/coffees.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { HealthModule } from './health/health.module';
 
 
 @Module({
   imports: [CoffeesModule, 
+    HealthModule,
     TypeOrmModule.forRoot({
     type: 'postgres', // type of our database
     host: 'localhost', // database host
